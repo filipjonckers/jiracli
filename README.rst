@@ -49,6 +49,27 @@ The following command creates a new issue for the project PROJECT. Issue type is
 
   ./jiracli  -c PROJECT "Dev Bug" "my test summary" "abc,def" "xxx,yyyy"
 
+Example: create issue with optional field values
+------------------------------------------------
+The following command creates a new issue and adds additional field values::
+
+  ./jiracli --create PROJECT "my issue type" "my test summary" -m "comment" --components "xxx,yyy" --priority "Low"
+
+Available field options::
+  
+  --labels "abc,def,..."
+  --components "xxx,yyy,..."
+  --priority "High"
+  --description "text"
+  --sprint "sprint"
+  --fix-version "version"
+  --due-date "date"
+  --epic "epic"
+  --comment "comment"
+
+This will return the issue id of the new issue created.  This option can be useful in bash scripts.
+
+
 
 Example: show a single issue:
 -----------------------------
